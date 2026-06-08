@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="slider-container" style="margin-top: px;">
-                    <label for="volume" style=" color: #374151; margin-bottom: 0; display: block;">
+                    <label for="volume" style=" color: #aaa; margin-bottom: 0; display: block;">
                         <span>Volume</span>
                         <span style="margin-left: 6px;">{{ Math.round(volume * 100) }}%</span>
                     </label>
@@ -259,12 +259,12 @@ const toggleReverseSelection = (event: Event) => {
 
 <style scoped>
 .control-panel {
-    background: white;
+    background: #1a1a1a;
     padding: 24px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(30, 41, 59, 0.08);
-    border: 1px solid #e2e8f0;
-    color: #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.05);
+    border: 1px solid #2a1a00;
+    color: #e0e0e0;
     margin: 20px 0;
     max-width: 1200px;
     width: 100%;
@@ -289,7 +289,7 @@ const toggleReverseSelection = (event: Event) => {
 .control-group label {
     font-size: 19.6px;
     font-weight: 600;
-    color: #374151;
+    color: #FFD700;
     margin-bottom: 4px;
 }
 
@@ -307,10 +307,10 @@ const toggleReverseSelection = (event: Event) => {
 
 .mode-select {
     padding: 8px 12px;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #444;
     border-radius: 8px;
-    background: white;
-    color: #374151;
+    background: #0d0d0d;
+    color: #e0e0e0;
     font-size: 19.6px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -319,8 +319,8 @@ const toggleReverseSelection = (event: Event) => {
 
 .mode-select:focus {
     outline: none;
-    border-color: #1e40af;
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    border-color: #FFD700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15);
 }
 
 .toggle-row {
@@ -335,14 +335,14 @@ const toggleReverseSelection = (event: Event) => {
     align-items: center;
     gap: 6px;
     font-size: 16.8px;
-    color: #6b7280;
+    color: #aaa;
     cursor: pointer;
 }
 
 .toggle-label input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: #1e40af;
+    accent-color: #FFD700;
     /* Customize checkbox color */
 }
 
@@ -383,7 +383,7 @@ const toggleReverseSelection = (event: Event) => {
 
 .key-label {
     font-size: 16.8px;
-    color: #6b7280;
+    color: #aaa;
     min-width: 40px;
     padding-right: clamp(25.2px, 10vw, 51px);
     flex-shrink: 1;
@@ -395,12 +395,12 @@ const toggleReverseSelection = (event: Event) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f3f4f6;
-    border: 1px solid #d1d5db;
+    background: #0d0d0d;
+    border: 1px solid #444;
     border-radius: 4px;
     font-size: 16.8px;
     font-weight: 500;
-    color: #6b7280;
+    color: #aaa;
     width: auto;
     min-width: 53px;
     max-width: calc(100% - 46px);
@@ -418,18 +418,18 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .key-input:focus {
-    border-color: #1e40af;
-    box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.1);
+    border-color: #FFD700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.15);
 }
 
 .key-input.set {
-    background: #dbeafe;
-    color: #1e40af;
-    border-color: #93c5fd;
+    background: #2a1a00;
+    color: #FFD700;
+    border-color: #FFD700;
 }
 
 .key-input::placeholder {
-    color: #9ca3af;
+    color: #555;
     text-transform: none;
     font-size: 14px;
 }
@@ -438,11 +438,11 @@ const toggleReverseSelection = (event: Event) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f3f4f6;
+    background: #0d0d0d;
     border-radius: 4px;
     font-size: 16.8px;
     font-weight: 500;
-    color: #6b7280;
+    color: #aaa;
     width: auto;
     min-width: 50px;
     max-width: calc(100% - 46px);
@@ -458,16 +458,15 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .key-value.set {
-    background: #dbeafe;
-    color: #1e40af;
+    background: #2a1a00;
+    color: #FFD700;
 }
 
 .clear-btn {
     padding: 4px 7.5px;
-
-    background: #f3f4f6;
-    border: 1px solid #d1d5db;
-    color: #374151;
+    background: #0d0d0d;
+    border: 1px solid #444;
+    color: #ccc;
     border-radius: 6px;
     font-size: 16.8px;
     cursor: pointer;
@@ -480,11 +479,12 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .clear-btn:hover:not(:disabled) {
-    background: #e5e7eb;
+    background: #2a1a00;
+    border-color: #FFD700;
 }
 
 .clear-btn:disabled {
-    opacity: 0.5;
+    opacity: 0.3;
     cursor: default;
 }
 
@@ -498,7 +498,7 @@ const toggleReverseSelection = (event: Event) => {
     width: 100%;
     height: 6px;
     border-radius: 3px;
-    background: #e5e7eb;
+    background: #333;
     outline: none;
     cursor: pointer;
     -webkit-appearance: none;
@@ -511,19 +511,19 @@ const toggleReverseSelection = (event: Event) => {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #1e40af;
+    background: #FFD700;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 .slider::-moz-range-thumb {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #1e40af;
+    background: #FFD700;
     cursor: pointer;
     border: none;
-    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 .presets {
@@ -534,9 +534,9 @@ const toggleReverseSelection = (event: Event) => {
 
 .preset-btn {
     padding: 2px 4px;
-    background: #f3f4f6;
-    border: 1px solid #d1d5db;
-    color: #374151;
+    background: #0d0d0d;
+    border: 1px solid #444;
+    color: #ccc;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -545,13 +545,14 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .preset-btn:hover {
-    background: #e5e7eb;
+    background: #2a1a00;
+    border-color: #FFD700;
 }
 
 .preset-btn.active {
-    background: #1e40af;
-    color: white;
-    border-color: #1e40af;
+    background: #FFD700;
+    color: #0a0a0a;
+    border-color: #FFD700;
 }
 
 .playback-controls {
@@ -581,40 +582,48 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .play-btn {
-    background: #10b981;
-    color: white;
+    background: #FFD700;
+    color: #0a0a0a;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
+.play-btn.active {
+    background: #B8860B;
+    color: #FFD700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
 .play-btn:hover:not(:disabled) {
-    background: #059669;
+    background: #FFC125;
     transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
 }
 
 .play-btn.disabled {
-    background: #d1d5db;
-    color: #9ca3af;
+    background: #333;
+    color: #666;
     cursor: default;
 }
 
 .stop-btn {
-    background: #ef4444;
-    color: white;
-
+    background: #1a0800;
+    color: #FF8C00;
+    border: 1px solid #FF8C00;
 }
 
 .stop-btn:hover:not(:disabled) {
-    background: #dc2626;
+    background: #2a0a00;
     transform: translateY(-1px);
 }
 
 .stop-btn:disabled {
-    background: #d1d5db;
-    color: #9ca3af;
+    background: #333;
+    color: #666;
     cursor: default;
+    border: 1px solid #444;
 }
 
 .reset-btn {
@@ -623,7 +632,7 @@ const toggleReverseSelection = (event: Event) => {
     right: 20px;
     background: transparent;
     border: none;
-    color: #6b7280;
+    color: #aaa;
     font-size: 20px;
     cursor: pointer;
     padding: 2px;
@@ -639,14 +648,10 @@ const toggleReverseSelection = (event: Event) => {
     box-shadow: none;
 }
 
-.reset-btn:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
 .reset-btn:hover:not(:disabled) {
     opacity: 1;
     transform: rotate(90deg);
+    color: #FFD700;
 }
 
 .reset-btn:disabled {
@@ -657,7 +662,7 @@ const toggleReverseSelection = (event: Event) => {
 .current-scale-section {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid #333;
 }
 
 .current-scale {
@@ -666,21 +671,21 @@ const toggleReverseSelection = (event: Event) => {
     justify-content: center;
     gap: 12px;
     padding: 16px;
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    background: linear-gradient(135deg, #2a1a00 0%, #3a2a00 100%);
     border-radius: 12px;
-    border: 1px solid #93c5fd;
+    border: 1px solid #FFD700;
 }
 
 .scale-label {
     font-size: 22.4px;
     font-weight: 500;
-    color: #1e40af;
+    color: #FFD700;
 }
 
 .scale-name {
     font-size: 25.2px;
     font-weight: 700;
-    color: #1e40af;
+    color: #FFD700;
 }
 
 @media (max-width: 1024px) {

@@ -79,11 +79,11 @@
   
   <style scoped>
   .piano-keyboard {
-    background: white;
+    background: #111;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(30, 41, 59, 0.08);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.05);
+    border: 1px solid #2a1a00;
     overflow-x: auto;
     margin: 20px auto;
     max-width: 1200px;

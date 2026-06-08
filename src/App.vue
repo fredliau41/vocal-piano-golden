@@ -454,13 +454,13 @@ watch(
   <style scoped>
   .app {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
     padding: 22px;
   }
   
   .app-header {
     text-align: center;
-    color: #1e293b;
+    color: #e0e0e0;
     margin-bottom: 30px;
   }
   
@@ -468,7 +468,8 @@ watch(
     font-size: 2.75rem;
     font-weight: 700;
     margin: 0 0 11px 0;
-    text-shadow: 0 2px 4px rgba(30, 41, 59, 0.1);
+    color: #FFD700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
   }
   
   .app-header p {
@@ -476,7 +477,7 @@ watch(
     opacity: 0.9;
     margin: 0;
     font-weight: 300;
-    color: #475569;
+    color: #999;
   }
   
   .app-main {
@@ -496,25 +497,25 @@ watch(
   }
   
   .instructions {
-    background: white;
+    background: #1a1a1a;
     padding: 26.4px;
     border-radius: 17.6px;
     margin-top: 33px;
-    box-shadow: 0 4px 20px rgba(30, 41, 59, 0.08);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
     max-width: 880px;
     width: 100%;
   }
   
   .instructions h3 {
-    color: #1e293b;
+    color: #FFD700;
     margin: 0 0 17.6px 0;
     font-size: 1.925rem;
     font-weight: 600;
   }
   
   .instructions ol {
-    color: #475569;
+    color: #ccc;
     margin: 0 0 17.6px 0;
     padding-left: 22px;
     font-size: 1.54rem;
@@ -526,16 +527,16 @@ watch(
   }
   
   .instructions strong {
-    color: #1e40af;
+    color: #FFD700;
     font-weight: 600;
   }
   
   .tip {
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    background: linear-gradient(135deg, #2a1a00 0%, #3a2a00 100%);
     padding: 13.2px 17.6px;
     border-radius: 8.8px;
-    border-left: 4px solid #1e40af;
-    color: #1e40af;
+    border-left: 4px solid #FFD700;
+    color: #FFD700;
     margin: 0;
     font-weight: 500;
     font-size: 1.54rem;

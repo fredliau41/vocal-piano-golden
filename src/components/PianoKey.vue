@@ -193,61 +193,61 @@ const handleMouseLeave = () => {
 
 /* Special States (Start, End, Playing) */
 .piano-key--start {
-  background: linear-gradient(to bottom, #3b82f6 0%, #1e40af 100%) !important;
-  color: white !important;
-  box-shadow: 0 0 8px rgba(30, 64, 175, 0.5);
+  background: linear-gradient(to bottom, #FFD700 0%, #DAA520 100%) !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
 }
 
 .piano-key--start.piano-key--hover {
-  background: linear-gradient(to bottom, #2563eb 0%, #1d4ed8 100%) !important;
-  box-shadow: 0 0 12px rgba(30, 64, 175, 0.7);
+  background: linear-gradient(to bottom, #FFC125 0%, #DAA520 100%) !important;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.8);
 }
 
 .piano-key--start.piano-key--pressed {
-  background: linear-gradient(to bottom, #1d4ed8 0%, #1e40af 100%) !important;
+  background: linear-gradient(to bottom, #DAA520 0%, #B8860B 100%) !important;
   transform: translateY(3px);
-  box-shadow: 0 0 8px rgba(30, 64, 175, 0.5), inset 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), inset 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .piano-key--end {
-  background: linear-gradient(to bottom, #22c55e 0%, #16a34a 100%) !important;
-  color: white !important;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  background: linear-gradient(to bottom, #FFD700 0%, #DAA520 100%) !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .piano-key--end.piano-key--hover {
-  background: linear-gradient(to bottom, #16a34a 0%, #15803d 100%) !important;
-  box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+  background: linear-gradient(to bottom, #FFC125 0%, #DAA520 100%) !important;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.7);
 }
 
 .piano-key--end.piano-key--pressed {
-  background: linear-gradient(to bottom, #15803d 0%, #16a34a 100%) !important;
+  background: linear-gradient(to bottom, #DAA520 0%, #B8860B 100%) !important;
   transform: translateY(3px);
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5), inset 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), inset 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .piano-key--playing {
-  background: linear-gradient(to bottom, #fbbf24 0%, #f59e0b 100%) !important;
-  color: white !important;
+  background: linear-gradient(to bottom, #FFD700 0%, #DAA520 100%) !important;
+  color: #1a1a1a !important;
   animation: glow 0.5s ease-in-out;
-  box-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.8);
   transform: translateY(-1px);
 }
 
 .piano-key--playing.piano-key--hover {
-  background: linear-gradient(to bottom, #f59e0b 0%, #d97706 100%) !important;
-  box-shadow: 0 0 16px rgba(251, 191, 36, 1);
+  background: linear-gradient(to bottom, #FFC125 0%, #DAA520 100%) !important;
+  box-shadow: 0 0 22px rgba(255, 215, 0, 1);
 }
 
 .piano-key--playing.piano-key--pressed {
-  background: linear-gradient(to bottom, #d97706 0%, #f59e0b 100%) !important;
+  background: linear-gradient(to bottom, #DAA520 0%, #B8860B 100%) !important;
   transform: translateY(2px);
-  box-shadow: 0 0 12px rgba(251, 191, 36, 0.8), inset 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.8), inset 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 12px rgba(251, 191, 36, 0.8); }
-  50% { box-shadow: 0 0 20px rgba(251, 191, 36, 1); }
+  0%, 100% { box-shadow: 0 0 16px rgba(255, 215, 0, 0.8); }
+  50% { box-shadow: 0 0 28px rgba(255, 215, 0, 1); }
 }
 
 .key-label {
