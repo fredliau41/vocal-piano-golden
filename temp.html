@@ -1,0 +1,362 @@
+<div class="video-container" style="position:relative;width:100vw;height:700px;max-height:700px;overflow:hidden;margin-left:calc(-50vw + 50%);background:#000;">
+  <iframe id="videoFrame" 
+    width="100%" 
+    height="100%"
+    src="https://www.youtube.com/embed/7mSetnDlC78?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&start=1&enablejsapi=1"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="object-fit:cover;width:100vw;height:100%;min-width:100vw;min-height:100%;transform:scale(1.2);transform-origin:center top;">
+  </iframe>
+
+  <style>
+    .video-container {
+      width: 100vw;
+      height: 700px;
+      max-height: 700px;
+    }
+    
+    .video-container iframe {
+      width: 100vw !important;
+      height: 100% !important;
+      min-width: 100vw !important;
+      min-height: 100% !important;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    @media (max-width: 992px) {
+      .video-container {
+        height: 56.25vw !important; /* 16:9 aspect ratio */
+        max-height: 400px !important;
+      }
+      .video-container iframe {
+        transform: scale(1.15) !important;
+        transform-origin: center top !important;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .video-container {
+        height: 56.25vw !important; /* 16:9 aspect ratio */
+        max-height: 360px !important;
+      }
+      .video-container iframe {
+        transform: scale(1.2) !important;
+        transform-origin: center top !important;
+      }
+    }
+  </style>
+  
+  <!-- Left hover area and button -->
+  <div id="leftHoverArea" style="position:absolute;top:0;left:0;width:15%;height:100%;z-index:10;"></div>
+  <button id="prevBtn" style="
+    position:absolute;
+    top:50%;
+    left:4%;
+    transform:translateY(-50%);
+    padding:12px 8px;
+    background:rgba(0,0,0,0.7);
+    color:white;
+    border:none;
+    border-radius:50%;
+    font-size:clamp(16px, 2vw, 24px);
+    cursor:pointer;
+    opacity:0;
+    transition:opacity 0.3s ease;
+    z-index:20;
+    width:clamp(40px, 6vw, 60px);
+    height:clamp(40px, 6vw, 60px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  ">&#9664;</button>
+  
+  <!-- Right hover area and button -->
+  <div id="rightHoverArea" style="position:absolute;top:0;right:0;width:15%;height:100%;z-index:10;"></div>
+  <button id="nextBtn" style="
+    position:absolute;
+    top:50%;
+    right:4%;
+    transform:translateY(-50%);
+    padding:12px 8px;
+    background:rgba(0,0,0,0.7);
+    color:white;
+    border:none;
+    border-radius:50%;
+    font-size:clamp(16px, 2vw, 24px);
+    cursor:pointer;
+    opacity:0;
+    transition:opacity 0.3s ease;
+    z-index:20;
+    width:clamp(40px, 6vw, 60px);
+    height:clamp(40px, 6vw, 60px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  ">&#9654;</button>
+
+  <!-- Optional overlay text -->
+  <div style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);text-align:center;color:white;z-index:15;opacity:0.9;">
+    <h1 style="font-size:3rem;margin:0;text-shadow:2px 2px 4px rgba(0,0,0,0.8);font-weight:300;">Image Slide</h1>
+    <p style="font-size:1.2rem;margin:10px 0 0 0;text-shadow:1px 1px 2px rgba(0,0,0,0.8);">Make your brand stand out through images</p>
+  </div>
+</div>
+
+<script>
+  // Load YouTube IFrame API
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Apply responsive classes
+  document.querySelector('div').classList.add('video-container');
+  
+  // Try to enable autoplay by creating a user gesture simulation
+  // This works in some browsers when the page loads due to navigation
+  document.addEventListener('DOMContentLoaded', function() {
+    // Simulate a user gesture to potentially allow autoplay
+    var event = new Event('click', { bubbles: true });
+    document.dispatchEvent(event);
+  });
+  
+  // Your video IDs (extracted from the embed URLs)
+  var videoIds = [
+    "7mSetnDlC78",
+    "IL6aeX_Xyog", 
+    "2MU213eVkJU"
+  ];
+  var currentIndex = 0;
+  var player;
+  var videoFrame = document.getElementById("videoFrame");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+  var leftHoverArea = document.getElementById("leftHoverArea");
+  var rightHoverArea = document.getElementById("rightHoverArea");
+  var hasUserInteracted = false;
+
+  // Function called when YouTube API is ready
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('videoFrame', {
+      height: '100%',
+      width: '100%',
+      videoId: videoIds[currentIndex],
+             playerVars: {
+         'autoplay': 1,
+         'controls': 0,
+         'showinfo': 0,
+         'rel': 0,
+         'modestbranding': 1,
+         'iv_load_policy': 3,
+         'disablekb': 1,
+         'fs': 0,
+         'cc_load_policy': 0,
+         'start': 1,
+         'enablejsapi': 1,
+         'origin': window.location.origin,
+         'playsinline': 1,
+         'mute': 0
+       },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+    // First, try unmuted autoplay (works on some browsers/conditions)
+    try {
+      event.target.playVideo();
+      hasUserInteracted = true;
+      console.log('Unmuted autoplay successful');
+    } catch (e) {
+      console.log('Unmuted autoplay failed, trying muted autoplay');
+      
+      // If unmuted fails, try muted autoplay
+      try {
+        event.target.mute();
+        event.target.playVideo();
+        console.log('Muted autoplay successful');
+        
+        // Show a subtle notification that video is muted
+        showUnmuteNotification();
+        
+        // Try to unmute after a short delay when user interacts
+        setupUnmuteOnInteraction(event.target);
+        
+      } catch (e2) {
+        console.log('All autoplay attempts failed, waiting for user interaction');
+        setupUserInteractionFallback(event.target);
+      }
+    }
+  }
+
+  function showUnmuteNotification() {
+    var notification = document.createElement('div');
+    notification.innerHTML = '🔇 Click anywhere to unmute';
+    notification.style.cssText = `
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      z-index: 30;
+      animation: fadeInOut 4s ease-in-out;
+    `;
+    
+    // Add fade animation
+    var style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeInOut {
+        0% { opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    document.querySelector('.video-container').appendChild(notification);
+    
+    // Remove notification after animation
+    setTimeout(function() {
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification);
+      }
+    }, 4000);
+  }
+
+  function setupUnmuteOnInteraction(player) {
+    var interactionEvents = ['click', 'touchstart', 'keydown'];
+    var handleInteraction = function() {
+      if (!hasUserInteracted) {
+        hasUserInteracted = true;
+        try {
+          player.unMute();
+          console.log('Video unmuted after user interaction');
+        } catch (e) {
+          console.log('Failed to unmute');
+        }
+        
+        // Remove all listeners after first interaction
+        interactionEvents.forEach(function(eventType) {
+          document.removeEventListener(eventType, handleInteraction);
+        });
+      }
+    };
+    
+    // Add listeners for various interaction types
+    interactionEvents.forEach(function(eventType) {
+      document.addEventListener(eventType, handleInteraction, { once: true });
+    });
+  }
+
+  function setupUserInteractionFallback(player) {
+    var interactionEvents = ['click', 'touchstart', 'keydown'];
+    var handleInteraction = function() {
+      if (!hasUserInteracted) {
+        hasUserInteracted = true;
+        try {
+          player.playVideo();
+          console.log('Video started after user interaction');
+        } catch (e) {
+          console.log('Failed to start video after interaction');
+        }
+        
+        // Remove all listeners after first interaction
+        interactionEvents.forEach(function(eventType) {
+          document.removeEventListener(eventType, handleInteraction);
+        });
+      }
+    };
+    
+    // Add listeners for various interaction types
+    interactionEvents.forEach(function(eventType) {
+      document.addEventListener(eventType, handleInteraction, { once: true });
+    });
+  }
+
+  function onPlayerStateChange(event) {
+    // When video ends (state 0), advance to next video
+    if (event.data === YT.PlayerState.ENDED) {
+      nextVideo();
+    }
+  }
+
+  function nextVideo() {
+    currentIndex = (currentIndex + 1) % videoIds.length;
+    player.loadVideoById(videoIds[currentIndex]);
+  }
+
+  function prevVideo() {
+    currentIndex = (currentIndex - 1 + videoIds.length) % videoIds.length;
+    player.loadVideoById(videoIds[currentIndex]);
+  }
+
+  // Navigation functions
+  nextBtn.addEventListener("click", function() {
+    hasUserInteracted = true;
+    nextVideo();
+  });
+  
+  prevBtn.addEventListener("click", function() {
+    hasUserInteracted = true;
+    prevVideo();
+  });
+
+  // Show/hide left button
+  leftHoverArea.addEventListener("mouseenter", function() {
+    prevBtn.style.opacity = "1";
+  });
+  
+  leftHoverArea.addEventListener("mouseleave", function() {
+    prevBtn.style.opacity = "0";
+  });
+  
+  prevBtn.addEventListener("mouseenter", function() {
+    prevBtn.style.opacity = "1";
+  });
+  
+  prevBtn.addEventListener("mouseleave", function() {
+    prevBtn.style.opacity = "0";
+  });
+
+  // Show/hide right button
+  rightHoverArea.addEventListener("mouseenter", function() {
+    nextBtn.style.opacity = "1";
+  });
+  
+  rightHoverArea.addEventListener("mouseleave", function() {
+    nextBtn.style.opacity = "0";
+  });
+  
+  nextBtn.addEventListener("mouseenter", function() {
+    nextBtn.style.opacity = "1";
+  });
+  
+  nextBtn.addEventListener("mouseleave", function() {
+    nextBtn.style.opacity = "0";
+  });
+
+  // Hover effect on buttons
+  prevBtn.addEventListener("mouseenter", function() {
+    prevBtn.style.background = "rgba(0,0,0,0.9)";
+  });
+  
+  prevBtn.addEventListener("mouseleave", function() {
+    prevBtn.style.background = "rgba(0,0,0,0.7)";
+  });
+  
+  nextBtn.addEventListener("mouseenter", function() {
+    nextBtn.style.background = "rgba(0,0,0,0.9)";
+  });
+  
+  nextBtn.addEventListener("mouseleave", function() {
+    nextBtn.style.background = "rgba(0,0,0,0.7)";
+  });
+</script>

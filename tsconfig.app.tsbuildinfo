@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/services/audioservice.ts","./src/services/cookieservice.ts","./src/types/index.ts","./src/utils/musictheory.ts","./src/utils/playbackbuilder.ts","./src/app.vue","./src/components/controlpanel.vue","./src/components/helloworld.vue","./src/components/pianokey.vue","./src/components/pianokeyboard.vue"],"version":"5.8.3"}
