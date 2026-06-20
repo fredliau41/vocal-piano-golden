@@ -78,25 +78,25 @@ textarea {
 
 button {
   border-radius: 8px;
-  border: 1px solid #FFD700;
+  border: 1px solid #D4AF37;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  color: #FFD700;
+  color: #D4AF37;
   cursor: pointer;
   transition: all 0.25s;
 }
 
 button:hover {
-  border-color: #FFC125;
+  border-color: #D4AF37;
   background-color: #2a1a00;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 2px solid #FFD700;
+  outline: 2px solid #D4AF37;
   outline-offset: 2px;
 }
 
@@ -126,8 +126,8 @@ input[type="range"]::-webkit-slider-thumb {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: #FFD700;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  background: #D4AF37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
   cursor: pointer;
 }
 
@@ -135,8 +135,8 @@ input[type="range"]::-moz-range-thumb {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: #FFD700;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  background: #D4AF37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
   cursor: pointer;
   border: none;
 }
@@ -158,5 +158,5 @@ input[type="range"]::-moz-range-thumb {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFD700;
+  background: #D4AF37;
 }

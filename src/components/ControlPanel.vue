@@ -262,7 +262,7 @@ const toggleReverseSelection = (event: Event) => {
     background: #1a1a1a;
     padding: 24px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(212, 175, 55, 0.05);
     border: 1px solid #2a1a00;
     color: #e0e0e0;
     margin: 20px 0;
@@ -289,7 +289,7 @@ const toggleReverseSelection = (event: Event) => {
 .control-group label {
     font-size: 19.6px;
     font-weight: 600;
-    color: #FFD700;
+    color: #D4AF37;
     margin-bottom: 4px;
 }
 
@@ -319,8 +319,8 @@ const toggleReverseSelection = (event: Event) => {
 
 .mode-select:focus {
     outline: none;
-    border-color: #FFD700;
-    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15);
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
 }
 
 .toggle-row {
@@ -342,7 +342,7 @@ const toggleReverseSelection = (event: Event) => {
 .toggle-label input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: #FFD700;
+    accent-color: #D4AF37;
     /* Customize checkbox color */
 }
 
@@ -418,14 +418,14 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .key-input:focus {
-    border-color: #FFD700;
-    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.15);
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.15);
 }
 
 .key-input.set {
     background: #2a1a00;
-    color: #FFD700;
-    border-color: #FFD700;
+    color: #D4AF37;
+    border-color: #D4AF37;
 }
 
 .key-input::placeholder {
@@ -459,7 +459,7 @@ const toggleReverseSelection = (event: Event) => {
 
 .key-value.set {
     background: #2a1a00;
-    color: #FFD700;
+    color: #D4AF37;
 }
 
 .clear-btn {
@@ -480,7 +480,7 @@ const toggleReverseSelection = (event: Event) => {
 
 .clear-btn:hover:not(:disabled) {
     background: #2a1a00;
-    border-color: #FFD700;
+    border-color: #D4AF37;
 }
 
 .clear-btn:disabled {
@@ -511,19 +511,19 @@ const toggleReverseSelection = (event: Event) => {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #FFD700;
+    background: #D4AF37;
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
 .slider::-moz-range-thumb {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #FFD700;
+    background: #D4AF37;
     cursor: pointer;
     border: none;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
 .presets {
@@ -546,13 +546,13 @@ const toggleReverseSelection = (event: Event) => {
 
 .preset-btn:hover {
     background: #2a1a00;
-    border-color: #FFD700;
+    border-color: #D4AF37;
 }
 
 .preset-btn.active {
-    background: #FFD700;
+    background: #D4AF37;
     color: #0a0a0a;
-    border-color: #FFD700;
+    border-color: #D4AF37;
 }
 
 .playback-controls {
@@ -582,7 +582,7 @@ const toggleReverseSelection = (event: Event) => {
 }
 
 .play-btn {
-    background: #FFD700;
+    background: #D4AF37;
     color: #0a0a0a;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -592,14 +592,14 @@ const toggleReverseSelection = (event: Event) => {
 
 .play-btn.active {
     background: #B8860B;
-    color: #FFD700;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+    color: #D4AF37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
 }
 
 .play-btn:hover:not(:disabled) {
-    background: #FFC125;
+    background: #D4AF37;
     transform: translateY(-1px);
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
 }
 
 .play-btn.disabled {
@@ -651,7 +651,7 @@ const toggleReverseSelection = (event: Event) => {
 .reset-btn:hover:not(:disabled) {
     opacity: 1;
     transform: rotate(90deg);
-    color: #FFD700;
+    color: #D4AF37;
 }
 
 .reset-btn:disabled {
@@ -673,19 +673,19 @@ const toggleReverseSelection = (event: Event) => {
     padding: 16px;
     background: linear-gradient(135deg, #2a1a00 0%, #3a2a00 100%);
     border-radius: 12px;
-    border: 1px solid #FFD700;
+    border: 1px solid #D4AF37;
 }
 
 .scale-label {
     font-size: 22.4px;
     font-weight: 500;
-    color: #FFD700;
+    color: #D4AF37;
 }
 
 .scale-name {
     font-size: 25.2px;
     font-weight: 700;
-    color: #FFD700;
+    color: #D4AF37;
 }
 
 @media (max-width: 1024px) {

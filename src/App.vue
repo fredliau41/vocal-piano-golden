@@ -1,8 +1,8 @@
 <template>
     <div class="app">
       <header class="app-header">
-        <h1 style="font-size: 3.2rem; line-height: 1.1;">Vocal Keys</h1>
-        <p>Interactive online piano accompaniment for vocal exercises, warm ups and singing practices</p>
+        <h1>VC Practice Keys</h1>
+        <p>Train your voice with interactive scales, warm-ups, and vocal exercises.</p>
       </header>
   
       <main class="app-main" style="padding-top: 0px;">
@@ -84,11 +84,11 @@ import type { AppState, KeyType, ScaleType, NoteRange, ScaleNote } from './types
 //////////////////////////
 
 useHead({
-  title: '🎹 Vocal Keys - Piano Warm Up Accompaniment for Singers',
+  title: '🎹 VC Practice Keys - Piano Warm Up Accompaniment for Singers',
   meta: [
     { name: 'description', content: 'Interactive piano built for vocal exercises, warmups, and singing practices.  Great for singer, vocalists, vocal coaches, and warm-up routines. The one and only Vocal Piano Online' },
     { name: 'keywords', content: 'vocal piano online, singing piano, piano warm up, vocal warm up piano,  warm up for singers, piano for singers, vocal warm up tool' },
-    { property: 'og:title', content: '🎹 Vocal Keys - Piano Warm Up Accompaniment for Singers' },
+    { property: 'og:title', content: '🎹 VC Practice Keys - Piano Warm Up Accompaniment for Singers' },
     { property: 'og:description', content: 'Free online vocal piano tool for singers. Practice with custom scales, arpeggios, and warm ups for your voice.' },
     { property: 'og:type', content: 'website' }
   ]
@@ -465,19 +465,21 @@ watch(
   }
   
   .app-header h1 {
-    font-size: 2.75rem;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 3.2rem;
     font-weight: 700;
     margin: 0 0 11px 0;
-    color: #FFD700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    color: #D4AF37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   }
-  
+
   .app-header p {
+    font-family: 'Inter', 'Montserrat', sans-serif;
     font-size: 1.85rem;
     opacity: 0.9;
     margin: 0;
-    font-weight: 300;
-    color: #999;
+    font-weight: 400;
+    color: #C5C6C7;
   }
   
   .app-main {
@@ -508,35 +510,35 @@ watch(
   }
   
   .instructions h3 {
-    color: #FFD700;
+    color: #D4AF37;
     margin: 0 0 17.6px 0;
     font-size: 1.925rem;
     font-weight: 600;
   }
-  
+
   .instructions ol {
-    color: #ccc;
+    color: #D4AF37;
     margin: 0 0 17.6px 0;
     padding-left: 22px;
     font-size: 1.54rem;
   }
-  
+
   .instructions li {
     margin-bottom: 8.8px;
     line-height: 1.6;
   }
-  
+
   .instructions strong {
-    color: #FFD700;
+    color: #D4AF37;
     font-weight: 600;
   }
-  
+
   .tip {
     background: linear-gradient(135deg, #2a1a00 0%, #3a2a00 100%);
     padding: 13.2px 17.6px;
     border-radius: 8.8px;
-    border-left: 4px solid #FFD700;
-    color: #FFD700;
+    border-left: 4px solid #D4AF37;
+    color: #D4AF37;
     margin: 0;
     font-weight: 500;
     font-size: 1.54rem;
@@ -546,18 +548,20 @@ watch(
     .app {
       padding: 11px;
     }
-    
+
     .app-header h1 {
       font-size: 2.2rem;
+      font-family: 'Cormorant Garamond', 'Playfair Display', serif;
     }
-    
+
     .app-header p {
       font-size: 1.5rem;
       line-height: 1.3;
       max-width: 95%;
       margin: 0 auto;
+      font-family: 'Inter', 'Montserrat', sans-serif;
     }
-    
+
     .instructions {
       padding: 17.6px;
       margin-top: 22px;

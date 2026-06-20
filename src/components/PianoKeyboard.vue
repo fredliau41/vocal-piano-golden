@@ -82,7 +82,7 @@
     background: #111;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(212, 175, 55, 0.05);
     border: 1px solid #2a1a00;
     overflow-x: auto;
     margin: 20px auto;
